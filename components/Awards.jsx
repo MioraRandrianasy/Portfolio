@@ -15,7 +15,7 @@ export default function Awards() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {awards.map((award, idx) => (
-                    <div key={idx} className="glass-panel p-6 rounded-2xl hover:bg-white/[0.05] transition-all duration-300 border border-white/5 hover:border-white/20">
+                    <div key={idx} className="glass-panel p-6 rounded-2xl hover:bg-white/[0.05] transition-all duration-300 border border-white/5 hover:border-white/20 flex flex-col">
                         <h3 className="text-xl font-display font-semibold text-white mb-2">
                             {award.title}
                         </h3>
@@ -24,9 +24,18 @@ export default function Awards() {
                             <span className="w-1 h-1 rounded-full bg-white/30 my-auto"></span>
                             <span>{award.date}</span>
                         </div>
-                        <p className="text-gray-400 font-light leading-relaxed">
+                        <p className="text-gray-400 font-light leading-relaxed mb-6 flex-grow">
                             {award.description}
                         </p>
+                        {award.image && (
+                            <div className="mt-auto w-full rounded-xl overflow-hidden border border-white/10 group">
+                                <img 
+                                    src={award.image} 
+                                    alt={award.title} 
+                                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>

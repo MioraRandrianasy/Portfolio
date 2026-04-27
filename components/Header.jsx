@@ -1,4 +1,4 @@
-import { Mail, Phone, Linkedin, Download } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Download } from "lucide-react";
 import Image from "next/image";
 import { personalInfo } from "@/lib/data";
 
@@ -47,6 +47,9 @@ export default function Header() {
                 </span>
                 <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white transition-colors hover:scale-105 duration-300">
                     <Linkedin size={18} className="text-starlight" /> LinkedIn
+                </a>
+                <a href={personalInfo.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white transition-colors hover:scale-105 duration-300">
+                    <Github size={18} className="text-white" /> GitHub
                 </a>
             </div>
 

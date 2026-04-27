@@ -6,21 +6,21 @@ import {
 } from "lucide-react";
 
 const navItems = [
-    { id: "home",         icon: Home,          label: "Home" },
-    { id: "about",        icon: User,          label: "About" },
-    { id: "experience",   icon: Briefcase,     label: "Experience" },
-    { id: "projects",     icon: FolderGit2,    label: "Projects" },
-    { id: "education",    icon: GraduationCap, label: "Education" },
-    { id: "skills",       icon: Code2,         label: "Skills" },
-    { id: "awards",       icon: Trophy,        label: "Awards" },
-    { id: "publications", icon: BookOpen,      label: "Publications" },
-    { id: "workshops",    icon: Presentation,  label: "Workshops" },
+    { id: "home", icon: Home, label: "Home" },
+    { id: "about", icon: User, label: "About" },
+    { id: "experience", icon: Briefcase, label: "Experience" },
+    { id: "projects", icon: FolderGit2, label: "Projects" },
+    { id: "education", icon: GraduationCap, label: "Education" },
+    { id: "skills", icon: Code2, label: "Skills" },
+    { id: "awards", icon: Trophy, label: "Awards" },
+    { id: "publications", icon: BookOpen, label: "Publications" },
+    { id: "workshops", icon: Presentation, label: "Workshops" },
 ];
 
 export default function NavBar() {
     const [activeSection, setActiveSection] = useState("home");
-    const [scrolled, setScrolled]           = useState(false);
-    const [menuOpen, setMenuOpen]           = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -81,7 +81,7 @@ export default function NavBar() {
             className={`md:hidden fixed top-4 right-4 z-50 p-3 rounded-full backdrop-blur-xl border transition-all duration-300 ${menuOpen || scrolled ? "bg-space-900/90 border-white/15 shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : "bg-space-900/60 border-white/10"}`}
         >
             {menuOpen
-                ? <X    size={20} className="text-white" />
+                ? <X size={20} className="text-white" />
                 : <Menu size={20} className="text-white" />}
         </button>
     );
@@ -96,11 +96,10 @@ export default function NavBar() {
                     <button
                         key={id}
                         onClick={() => scrollTo(id)}
-                        className={`flex items-center gap-4 w-full max-w-xs px-6 py-4 rounded-2xl transition-all duration-200 text-base font-medium border ${
-                            active
+                        className={`flex items-center gap-4 w-full max-w-xs px-6 py-4 rounded-2xl transition-all duration-200 text-base font-medium border ${active
                                 ? "bg-white/10 text-white border-white/20"
                                 : "text-gray-300 hover:text-white hover:bg-white/5 border-transparent"
-                        }`}
+                            }`}
                     >
                         <Icon size={18} className={active ? "text-nebula-light" : "text-gray-500"} />
                         {label}
