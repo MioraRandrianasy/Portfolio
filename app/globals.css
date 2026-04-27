@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #030514; /* Deep space fallback */
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(3, 5, 20, 0.8); 
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(155, 108, 250, 0.4); /* Nebula color */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(155, 108, 250, 0.8); 
+}
+
+/* Glassmorphism Utilities */
+@layer components {
+  .glass-card {
+    @apply bg-glass-gradient backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)];
+  }
+  
+  .glass-panel {
+    @apply bg-white/[0.03] backdrop-blur-md border border-white/5;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-starlight-light via-white to-nebula-light;
+  }
+}
+
+/* Base HTML smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
